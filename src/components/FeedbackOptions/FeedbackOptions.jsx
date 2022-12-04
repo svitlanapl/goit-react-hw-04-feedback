@@ -1,9 +1,7 @@
-import React from "react";
+// import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({
-    // onCountGoodFeedback,
-    // onCountNeutralFeedback,
-    // onCountBadFeedback   
     options, onLeaveFeedback }) => {
     return options.map(option => (
         <button type="button"
@@ -13,15 +11,10 @@ export const FeedbackOptions = ({
             {option}
         </button>
     ));
-    }
-//     <div><button type="button" onClick={onCountGoodFeedback}>
-//         Good
-//     </button></div>
+};
     
-//     <button type="button" onClick={onCountNeutralFeedback}>
-//         Neutral
-//     </button>
-//     <button type="button" onClick={onCountBadFeedback}>
-//         Bad
-//     </button>
-// }
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
+
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
