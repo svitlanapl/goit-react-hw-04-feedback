@@ -4,6 +4,8 @@ import { FeedbackOptions } from "components/FeedbackOptions";
 import { Section } from "components/Section";
 import { Notification } from "components/Notification";
 
+import { FeedbackList } from './App.styled';
+
 export class App extends Component {
     state = {
         good: 0,
@@ -31,10 +33,12 @@ export class App extends Component {
         return (
             <div className="Feedback">
                 <Section title="Please leave feedback">
-                    <FeedbackOptions
-                        options={Object.keys(this.state)}
-                        onLeaveFeedback={this.onLeaveFeedback}
-                    />
+                    <FeedbackList>
+                        <FeedbackOptions
+                            options={Object.keys(this.state)}
+                            onLeaveFeedback={this.onLeaveFeedback}
+                        />
+                    </FeedbackList>
                 </Section>
                 <Section title="Statistics">
                     {this.countTotalFeedback()
