@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Statistics } from "components/Statistics";
 import { FeedbackOptions } from "components/FeedbackOptions";
 import { Section } from "components/Section";
@@ -28,7 +28,7 @@ export const App = () => {
                 break;
             
             default:
-            return;
+                throw new Error(`The ${options} does not exist`);
         };
     };
     
